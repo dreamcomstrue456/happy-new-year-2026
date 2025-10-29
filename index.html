@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नया साल 2026 की शुभकामनाएं</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c1445, #8b0000, #b8860b);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .new-year-image {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 5px solid gold;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-shadow: 0 0 20px #ff0000, 0 0 30px #ff4500;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff4500;
+            }
+            to {
+                text-shadow: 0 0 30px #ff0000, 0 0 40px #ff4500, 0 0 50px #ff6347;
+            }
+        }
+        
+        .greeting {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .name {
+            font-size: 1.8rem;
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.25);
+            border-radius: 10px;
+            border-left: 5px solid gold;
+            border-right: 5px solid gold;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .share-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, #25D366, #128C7E, #25D366);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #128C7E, #25D366, #128C7E);
+        }
+        
+        .share-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .name-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            border: 2px solid gold;
+            border-radius: 10px;
+            margin-top: 10px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* फायरवर्क्स स्टाइल */
+        .firework {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: particleMove 1.5s ease-out forwards;
+        }
+        
+        .spark {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: linear-gradient(to top, transparent, #ff0);
+            animation: sparkMove 0.8s ease-out forwards;
+        }
+        
+        .explosion {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: explode 0.6s ease-out forwards;
+        }
+        
+        @keyframes particleMove {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes sparkMove {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(3);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+        
+        .ground-firecracker {
+            position: absolute;
+            bottom: 10px;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to top, #8B4513, #FFD700);
+            animation: groundFlicker 0.3s infinite alternate;
+        }
+        
+        @keyframes groundFlicker {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .greeting {
+                font-size: 1.3rem;
+            }
+            
+            .name {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="fireworks-container"></div>
+    
+    <div class="container">
+        <!-- 2026 की थीम वाली छवि -->
+        <img src="https://images.unsplash.com/photo-1735661186122-7a7a1c7b8b7c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Happy New Year 2026" class="new-year-image">
+        
+        <h1>🎉 Happy New Year 2026 🎉</h1>
+        
+        <div class="greeting">
+            2026 की हार्दिक शुभकामनाएं!<br>
+            नया साल आपके जीवन में खुशियाँ,<br>
+            सफलता और समृद्धि लेकर आए।
+        </div>
+        
+        <div class="name">
+            आपका दोस्त,<br>
+            <input type="text" class="name-input" id="userName" placeholder="अपना नाम यहाँ लिखें" value="राहुल">
+        </div>
+        
+        <a href="#" class="share-btn" id="whatsappShare">
+            📱 WhatsApp पर शेयर करें
+        </a>
+    </div>
+
+    <script>
+        // कलर्स की array
+        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffa500', '#ff69b4'];
+        
+        // फायरवर्क्स बनाने का फंक्शन
+        function createFirework() {
+            const container = document.getElementById('fireworks-container');
+            
+            // रैंडम पोजीशन
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            // मुख्य फायरवर्क डिव
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = `${x}vw`;
+            firework.style.top = `${y}vh`;
+            
+            // स्पार्क्स बनाना
+            createSparks(firework, color);
+            
+            // विस्फोट बनाना
+            setTimeout(() => {
+                createExplosion(firework, x, y, color);
+            }, 800);
+            
+            container.appendChild(firework);
+            
+            // क्लीनअप
+            setTimeout(() => {
+                if (firework.parentNode) {
+                    firework.remove();
+                }
+            }, 2000);
+        }
+        
+        // स्पार्क्स बनाना
+        function createSparks(firework, color) {
+            const sparkCount = 8;
+            for (let i = 0; i < sparkCount; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'spark';
+                spark.style.background = `linear-gradient(to top, transparent, ${color})`;
+                spark.style.left = '2px';
+                spark.style.animationDelay = `${i * 0.1}s`;
+                firework.appendChild(spark);
+            }
+        }
+        
+        // विस्फोट बनाना
+        function createExplosion(firework, x, y, color) {
+            const particleCount = 16;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.backgroundColor = color;
+                particle.style.boxShadow = `0 0 10px ${color}`;
+                
+                const angle = (Math.PI * 2 * i) / particleCount;
+                const distance = 50 + Math.random() * 50;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                particle.style.setProperty('--tx', `${tx}px`);
+                particle.style.setProperty('--ty', `${ty}px`);
+                
+                firework.appendChild(particle);
+            }
+            
+            // मुख्य विस्फोट
+            const explosion = document.createElement('div');
+            explosion.className = 'explosion';
+            explosion.style.backgroundColor = color;
+            explosion.style.boxShadow = `0 0 20px ${color}`;
+            explosion.style.left = '0px';
+            explosion.style.top = '0px';
+            firework.appendChild(explosion);
+        }
+        
+        // ग्राउंड फायरक्रैकर
+        function createGroundFirecracker() {
+            const container = document.getElementById('fireworks-container');
+            const firecracker = document.createElement('div');
+            firecracker.className = 'ground-firecracker';
+            firecracker.style.left = `${Math.random() * 100}vw`;
+            firecracker.style.animationDelay = `${Math.random() * 2}s`;
+            
+            container.appendChild(firecracker);
+            
+            setTimeout(() => {
+                if (firecracker.parentNode) {
+                    firecracker.remove();
+                }
+            }, 3000);
+        }
+        
+        // मल्टीपल फायरवर्क्स शुरू करना
+        function startFireworks() {
+            // एरिया फायरवर्क्स
+            setInterval(createFirework, 300);
+            
+            // ग्राउंड फायरक्रैकर
+            setInterval(createGroundFirecracker, 500);
+        }
+        
+        // WhatsApp शेयरिंग
+        document.getElementById('whatsappShare').addEventListener('click', function(e) {
+            e.preventDefault();
+            const userName = document.getElementById('userName').value || 'आपका दोस्त';
+            const shareText = `नया साल 2026 की हार्दिक शुभकामनाएं! 🎉✨\n\n${userName} की ओर से आपके लिए शुभकामनाएं!\n\nनया साल आपके जीवन में खुशियाँ, सफलता और समृद्धि लेकर आए।\n\nशुभ नव वर्ष 2026!`;
+            
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+        
+        // इनपुट फील्ड सलेक्ट
+        document.getElementById('userName').addEventListener('click', function() {
+            this.select();
+        });
+        
+        // पेज लोड होते ही फायरवर्क्स शुरू
+        window.onload = startFireworks;
+    </script>
+</body>
+</html>
+<script type="text/javascript">
+	atOptions = {
+		'key' : '875b0e49428a8a57597f41bc9ab2dfbb',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/875b0e49428a8a57597f41bc9ab2dfbb/invoke.js"></script>
